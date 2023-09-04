@@ -1,0 +1,22 @@
+import mongoose, { ConnectOptions } from "mongoose";
+/**
+ * @type string URI - environment variable that stores the connection string
+ */
+
+/**
+ * Function that is used to connect to the mongoDB cloud instance
+ */
+const connectToDatabase = async () => {
+    try {
+        await mongoose.connect(URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            dbName:"test",
+        } as ConnectOptions);
+        console.log('Connected to MongoDB', URI);
+    } catch (error) {
+        console.error(URI);
+    }
+};
+
+export default connectToDatabase;
