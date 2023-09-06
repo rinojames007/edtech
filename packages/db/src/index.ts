@@ -2,7 +2,7 @@ import mongoose, { Document } from "mongoose";
 export interface adminInterface extends Document {
     username: string,
     password: string,
-};
+}
 export interface userInterface extends Document {
     username: string,
     password: string,
@@ -14,7 +14,7 @@ interface courseInterface extends Document {
     price: number,
     imageLink: string,
     published: boolean
-};
+}
 const adminSchema = new mongoose.Schema<adminInterface>({
     username: String,
     password: String
