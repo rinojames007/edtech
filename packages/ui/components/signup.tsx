@@ -1,6 +1,6 @@
 import { Card, Typography, TextField, Button } from "@mui/material"
 import { useState } from "react";
-import axios from 'axios';
+
 export function Signup(props: {
     onClick: (username: string, password: string) => void
 }) {
@@ -9,7 +9,7 @@ export function Signup(props: {
     const [password, setPassword] = useState('');
 
     return  <Card style={{width:'20vw', margin:'20vh auto', padding:'2rem', textAlign:'center'}}>
-    <Typography variant={'h5'}>
+    <Typography variant='h5'>
         Welcome, explore our world.
     </Typography>
     <TextField id="username" label="Username" onChange={(e) => {
@@ -18,8 +18,8 @@ export function Signup(props: {
     <TextField id="password" label="Password" onChange={(e) => {
         setPassword(e.target.value)
     }} style={{margin:".5em"}} variant="outlined" />
-    <Button variant="contained" onClick={async () => {
+    <Button onClick={() => {
         props.onClick(username, password);
-    }} style={{display:"block", margin:"0 auto"}}>Sign Up</Button>
+    }} style={{display:"block", margin:"0 auto"}} variant="contained">Sign Up</Button>
 </Card>
 }

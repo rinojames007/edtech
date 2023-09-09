@@ -3,11 +3,11 @@ import axios from 'axios';
 export default function SignupPage () {
     async function handleSignup(username: string, password: string){
         try{
-            const responsess = await axios.post("/api/admin/signup", {
+            const responsesData = await axios.post("/api/admin/signup", {
                 username,
                 password
             });
-            console.log(responsess);
+            console.log(responsesData);
         } catch (e) {
             console.log('something broke in here:',e)
         }
